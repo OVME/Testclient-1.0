@@ -16,18 +16,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="JobState">
-        <s:complexType>
-          <s:sequence />
-        </s:complexType>
-      </s:element>
-      <s:element name="JobStateResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element name="JobStateResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="Result">
         <s:complexType>
           <s:sequence>
@@ -39,18 +27,6 @@
         <s:complexType>
           <s:sequence>
             <s:element name="ResultResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="StartHandling">
-        <s:complexType>
-          <s:sequence />
-        </s:complexType>
-      </s:element>
-      <s:element name="StartHandlingResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element name="StartHandlingResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -68,18 +44,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Test">
-        <s:complexType>
-          <s:sequence />
-        </s:complexType>
-      </s:element>
-      <s:element name="TestResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element name="TestResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetRIdSoapIn">
@@ -88,23 +52,11 @@
   <wsdl:message name="GetRIdSoapOut">
     <wsdl:part name="parameters" element="s0:GetRIdResponse" />
   </wsdl:message>
-  <wsdl:message name="JobStateSoapIn">
-    <wsdl:part name="parameters" element="s0:JobState" />
-  </wsdl:message>
-  <wsdl:message name="JobStateSoapOut">
-    <wsdl:part name="parameters" element="s0:JobStateResponse" />
-  </wsdl:message>
   <wsdl:message name="ResultSoapIn">
     <wsdl:part name="parameters" element="s0:Result" />
   </wsdl:message>
   <wsdl:message name="ResultSoapOut">
     <wsdl:part name="parameters" element="s0:ResultResponse" />
-  </wsdl:message>
-  <wsdl:message name="StartHandlingSoapIn">
-    <wsdl:part name="parameters" element="s0:StartHandling" />
-  </wsdl:message>
-  <wsdl:message name="StartHandlingSoapOut">
-    <wsdl:part name="parameters" element="s0:StartHandlingResponse" />
   </wsdl:message>
   <wsdl:message name="StatusSoapIn">
     <wsdl:part name="parameters" element="s0:Status" />
@@ -112,51 +64,24 @@
   <wsdl:message name="StatusSoapOut">
     <wsdl:part name="parameters" element="s0:StatusResponse" />
   </wsdl:message>
-  <wsdl:message name="TestSoapIn">
-    <wsdl:part name="parameters" element="s0:Test" />
-  </wsdl:message>
-  <wsdl:message name="TestSoapOut">
-    <wsdl:part name="parameters" element="s0:TestResponse" />
-  </wsdl:message>
-  <wsdl:portType name="SingleServiceSoap">
+  <wsdl:portType name="ThreadPoolSeviceSoap">
     <wsdl:operation name="GetRId">
       <wsdl:input message="s0:GetRIdSoapIn" />
       <wsdl:output message="s0:GetRIdSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="JobState">
-      <wsdl:input message="s0:JobStateSoapIn" />
-      <wsdl:output message="s0:JobStateSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Result">
       <wsdl:input message="s0:ResultSoapIn" />
       <wsdl:output message="s0:ResultSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="StartHandling">
-      <wsdl:input message="s0:StartHandlingSoapIn" />
-      <wsdl:output message="s0:StartHandlingSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="Status">
       <wsdl:input message="s0:StatusSoapIn" />
       <wsdl:output message="s0:StatusSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Test">
-      <wsdl:input message="s0:TestSoapIn" />
-      <wsdl:output message="s0:TestSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="SingleServiceSoap" type="s0:SingleServiceSoap">
+  <wsdl:binding name="ThreadPoolSeviceSoap" type="s0:ThreadPoolSeviceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetRId">
-      <soap:operation soapAction="http://tempuri.org/TP2.SingleService.GetRId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="JobState">
-      <soap:operation soapAction="http://tempuri.org/TP2.SingleService.JobState" style="document" />
+      <soap:operation soapAction="http://tempuri.org/TP4.ThreadPoolSevice.GetRId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -165,16 +90,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Result">
-      <soap:operation soapAction="http://tempuri.org/TP2.SingleService.Result" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="StartHandling">
-      <soap:operation soapAction="http://tempuri.org/TP2.SingleService.StartHandling" style="document" />
+      <soap:operation soapAction="http://tempuri.org/TP4.ThreadPoolSevice.Result" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -183,16 +99,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Status">
-      <soap:operation soapAction="http://tempuri.org/TP2.SingleService.Status" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Test">
-      <soap:operation soapAction="http://tempuri.org/TP2.SingleService.Test" style="document" />
+      <soap:operation soapAction="http://tempuri.org/TP4.ThreadPoolSevice.Status" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -201,9 +108,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="SingleService">
-    <wsdl:port name="SingleServiceSoap" binding="s0:SingleServiceSoap">
-      <soap:address location="http://localhost:57772/csp/samples/TP2.SingleService.cls" />
+  <wsdl:service name="ThreadPoolSevice">
+    <wsdl:port name="ThreadPoolSeviceSoap" binding="s0:ThreadPoolSeviceSoap">
+      <soap:address location="http://localhost:57772/csp/samples/TP4.ThreadPoolSevice.cls" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

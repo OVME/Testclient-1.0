@@ -4,11 +4,13 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using Client.Annotations;
+using Client.CombinedTP;
 using Client.Model;
-using Client.ServiceReference1;
+using Client.TP4;
 using GalaSoft.MvvmLight.CommandWpf;
 using Task = Client.Model.Task;
 
@@ -33,12 +35,15 @@ namespace Client.ViewModel
 
         #region properties
 
+        public bool IsCombTP { get; set; }
+        public bool IsTP4 { get; set; }
+
         public ObservableCollection<Task> Tasks { get; set; }
         public ObservableCollection<Result> Results { get; set; }
 
         public ObservableCollection<Id> Ids { get; set; }
-        public SingleServiceSoapClient client { get; set; }
-
+        public CombinedTP.CombinedServiceSoapClient client { get; set; }
+        public ThreadPoolSeviceSoapClient tpclient { get; set; }
         public string StartHandlingMessage
         {
             get { return _startHandlingMessage; }
@@ -122,7 +127,6 @@ namespace Client.ViewModel
         private RelayCommand _addTasksCommand;
         private RelayCommand _getStatusCommand;
         private RelayCommand _getResultCommand;
-        private RelayCommand _startHandlingCommand;
         private RelayCommand _generateTasksCommand;
         private RelayCommand _addNewTaskToListCommand;
 
@@ -141,10 +145,7 @@ namespace Client.ViewModel
             get { return _getResultCommand ?? (_getResultCommand = new RelayCommand(GetResults)); }
         }
 
-        public RelayCommand StartHandlingCommand
-        {
-            get { return _startHandlingCommand ?? (_startHandlingCommand = new RelayCommand(StartHandling)); }
-        }
+ 
 
         public RelayCommand GenerateTasksCommand
         {
@@ -160,7 +161,8 @@ namespace Client.ViewModel
 
         public MainViewModel()
         {
-            client = new SingleServiceSoapClient("SingleServiceSoap");
+            client = new CombinedServiceSoapClient("CombinedServiceSoap");
+            tpclient = new ThreadPoolSeviceSoapClient("ThreadPoolSeviceSoap");
             Ids = new ObservableCollection<Id>();
             Results = new ObservableCollection<Result>();
             Tasks = new ObservableCollection<Task>();
@@ -172,21 +174,53 @@ namespace Client.ViewModel
         public void AddTasks()
         {
             Ids.Clear();
-            foreach (var t in Tasks)
-                Ids.Add(new Id(){s = client.GetRId(t.s)});
+            if(IsCombTP)
+                foreach (var t in Tasks)
+                    Ids.Add(new Id(){s = client.GetRId(t.s)});
+            if(IsTP4)
+                foreach (var t in Tasks)
+                    Ids.Add(new Id() { s = tpclient.GetRId(t.s) });
         }
 
         public void GetStatus()
         {
-            Status = client.Status(StatusId);
+            try
+            {
+                if (IsCombTP)
+                Status = client.Status(StatusId);
+                if(IsTP4)
+                    Status = tpclient.Status(StatusId);
+            }
+            catch (FaultException ex)
+            {
+
+                Status = ex.Message;
+            }
+            
         }
 
 
         public void GetResults()
         {
             Results.Clear();
-            for(long i = BeginId; i<StopId; i++)
-            Results.Add(new Result(){ s =client.Result(i)});
+            for (long i = BeginId; i < StopId+1; i++)
+            {
+                try
+                {
+                    if(IsCombTP)
+                    Results.Add(new Result() {s = client.Result(i)});
+                    if (IsTP4)
+                    {
+                        Results.Add(new Result() { s = tpclient.Result(i) });
+                    }
+                }
+                catch (FaultException ex)
+                {
+                    Results.Add(new Result() { s = ex.Message });
+                }
+                
+            }
+            
         }
 
         public void AddNewTaskToList()
@@ -195,12 +229,6 @@ namespace Client.ViewModel
         }
 
         
-
-        public void StartHandling()
-        {
-            StartHandlingMessage = client.StartHandling();
-        }
-
 
         public void Generate()
         {
