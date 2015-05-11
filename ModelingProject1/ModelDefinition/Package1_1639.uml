@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="bddff9ab-89b6-42b6-9df8-1e9c24736351"
+  name="Channels"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="d2e7c2b7-20cb-4c36-9f54-8c5232bdf98e"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.ServiceModel.Channels"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="a0cf4872-cfa6-4fcd-8184-e6795e1251f7"
+        name="Binding"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fec05920-79a8-482c-82a3-439459a84d09"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.ServiceModel.dll&quot; Namespace%3DSystem.ServiceModel.Channels Type%3DBinding"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b982e747-f203-4c82-9d3f-a32be65070f9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="18926bb4-5055-4c6b-bf15-af4a03ca388d">
+                <propertyInstance
+                  Id="23e0bf61-b906-4fb4-a88d-1c1e068c8281"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bf1447ad-8083-4377-9232-d44efc315585">
+                <propertyInstance
+                  Id="9146263e-d64c-4840-901f-0130f0a016d9"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c680eb32-a23a-47e0-9e12-e49f70f3df0f">
+                <propertyInstance
+                  Id="9e634c47-857b-4f4f-b9c0-daa652c68c05"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="56f63509-ae24-4efb-897a-19b9d61cc525">
+                <propertyInstance
+                  Id="e26846c8-b2ae-4c84-84f5-06f7f535d073"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8b8d8824-9b94-40b9-b19c-97e6bfca04ac">
+                <propertyInstance
+                  Id="6ba8cd6b-7521-404d-8cfc-e2b20adcc7e7"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

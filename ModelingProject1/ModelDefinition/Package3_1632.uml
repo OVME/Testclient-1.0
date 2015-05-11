@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ad44effc-450e-493c-83e9-76352e772db9"
+  name="CommandWpf"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="fe790df8-0b43-48b7-b116-dc3e3b68aca4"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DGalaSoft.MvvmLight.CommandWpf"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="48a18bdf-5aa9-46ce-96f4-5cedd6543b3e"
+        name="RelayCommand"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="08c89e7d-6f6f-4798-84ed-3bd626f699dd"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FLenovo%2FDocuments%2FVisual Studio 2013%2FProjects%2FClient1%2Fpackages%2FPortable.MvvmLightLibs.5.0.2.0%2Flib%2Fnet45%2FGalaSoft.MvvmLight.Platform.dll&quot; Namespace%3DGalaSoft.MvvmLight.CommandWpf Type%3DRelayCommand"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="5bb143cf-4ac8-405e-8d3e-b8c448ce2066"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="52a96b01-9de5-43a4-9b7f-14d24b182aea">
+                <propertyInstance
+                  Id="38b358da-9f81-4cb3-8fad-4d54f5bc0462"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1ad1730e-d215-4a68-8d7a-54584984f843">
+                <propertyInstance
+                  Id="804f6b82-3907-4dd7-8202-9c27dafde6b2"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c83dadc7-1b08-41e0-b9b5-256ca16441d7">
+                <propertyInstance
+                  Id="c0155b90-e2fd-4667-8d06-e398982adcee"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="28c7e21f-f1d0-426d-80ea-b74868b7af65">
+                <propertyInstance
+                  Id="6a7570a9-b2f1-42b1-9978-3df4fa8fcd33"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8a9520bc-3d4b-45e1-8a3c-056f50d72b62">
+                <propertyInstance
+                  Id="d9e5abd3-f8d1-4fb9-8a36-4229325a8bc0"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

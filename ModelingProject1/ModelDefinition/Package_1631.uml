@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ef87c019-174a-42d3-9ac6-429dd6aa09af"
+  name="Client"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="3484d80f-c3a5-49c9-8e6d-ef80dea7ec84"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DClient"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="6e8daa03-0cc8-4a3e-a2ae-046497d1e1c8"
+        LastKnownName="Views"
+        LastKnownLocation="Package1_1631.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a1f44136-5ae9-4f44-aeb7-aa242320a26f"
+        LastKnownName="ViewModel"
+        LastKnownLocation="Package_1632.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="bdd123f6-f2ba-448f-ae04-cca63528458d"
+        LastKnownName="Model"
+        LastKnownLocation="Package6_1632.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ea6cfef8-4516-42e0-8b49-4e750842d527"
+        LastKnownName="ThreadPool"
+        LastKnownLocation="Package7_1632.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

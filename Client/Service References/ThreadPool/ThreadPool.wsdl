@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s0="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="GetFullRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetFullRequestResult" type="s0:Request" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Request">
+        <s:sequence>
+          <s:element minOccurs="0" name="RequestString" type="s:string" />
+          <s:element minOccurs="0" name="RequestStatus">
+            <s:simpleType>
+              <s:restriction base="s:string">
+                <s:enumeration value="WAITING" />
+                <s:enumeration value="IN_STACK" />
+                <s:enumeration value="RUNNING" />
+                <s:enumeration value="READY" />
+                <s:enumeration value="READY_WITH_ERROR" />
+              </s:restriction>
+            </s:simpleType>
+          </s:element>
+          <s:element minOccurs="0" name="AddedTime" type="s:string" />
+          <s:element minOccurs="0" name="HandledTime" type="s:string" />
+          <s:element minOccurs="0" name="ErrorData" type="s:string" />
+          <s:element minOccurs="0" name="Result" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProcTaskData">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcTaskDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetProcTaskDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="ReqString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetRIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Result">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="ResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Status">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="StatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetFullRequestSoapIn">
+    <wsdl:part name="parameters" element="s0:GetFullRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetFullRequestSoapOut">
+    <wsdl:part name="parameters" element="s0:GetFullRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProcTaskDataSoapIn">
+    <wsdl:part name="parameters" element="s0:GetProcTaskData" />
+  </wsdl:message>
+  <wsdl:message name="GetProcTaskDataSoapOut">
+    <wsdl:part name="parameters" element="s0:GetProcTaskDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRIdSoapIn">
+    <wsdl:part name="parameters" element="s0:GetRId" />
+  </wsdl:message>
+  <wsdl:message name="GetRIdSoapOut">
+    <wsdl:part name="parameters" element="s0:GetRIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResultSoapIn">
+    <wsdl:part name="parameters" element="s0:Result" />
+  </wsdl:message>
+  <wsdl:message name="ResultSoapOut">
+    <wsdl:part name="parameters" element="s0:ResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatusSoapIn">
+    <wsdl:part name="parameters" element="s0:Status" />
+  </wsdl:message>
+  <wsdl:message name="StatusSoapOut">
+    <wsdl:part name="parameters" element="s0:StatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ThreadPoolServiceSoap">
+    <wsdl:operation name="GetFullRequest">
+      <wsdl:input message="s0:GetFullRequestSoapIn" />
+      <wsdl:output message="s0:GetFullRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcTaskData">
+      <wsdl:input message="s0:GetProcTaskDataSoapIn" />
+      <wsdl:output message="s0:GetProcTaskDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRId">
+      <wsdl:input message="s0:GetRIdSoapIn" />
+      <wsdl:output message="s0:GetRIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Result">
+      <wsdl:input message="s0:ResultSoapIn" />
+      <wsdl:output message="s0:ResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Status">
+      <wsdl:input message="s0:StatusSoapIn" />
+      <wsdl:output message="s0:StatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ThreadPoolServiceSoap" type="s0:ThreadPoolServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFullRequest">
+      <soap:operation soapAction="http://tempuri.org/ThreadPool.ThreadPoolService.GetFullRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcTaskData">
+      <soap:operation soapAction="http://tempuri.org/ThreadPool.ThreadPoolService.GetProcTaskData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRId">
+      <soap:operation soapAction="http://tempuri.org/ThreadPool.ThreadPoolService.GetRId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Result">
+      <soap:operation soapAction="http://tempuri.org/ThreadPool.ThreadPoolService.Result" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Status">
+      <soap:operation soapAction="http://tempuri.org/ThreadPool.ThreadPoolService.Status" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ThreadPoolService">
+    <wsdl:port name="ThreadPoolServiceSoap" binding="s0:ThreadPoolServiceSoap">
+      <soap:address location="http://localhost:57772/csp/samples/ThreadPool.ThreadPoolService.cls" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

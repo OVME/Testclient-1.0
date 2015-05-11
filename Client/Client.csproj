@@ -88,9 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Clients\TP2WSClient.cs" />
+    <Compile Include="Model\CsvExport.cs" />
     <Compile Include="Model\Id.cs" />
     <Compile Include="Model\Task.cs" />
+    <Compile Include="Model\TestData.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -100,12 +101,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Service References\CombinedTP\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\TP4\Reference.cs">
+    <Compile Include="Service References\ThreadPool\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -141,29 +137,30 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\CombinedTP\Client.CombinedTP.GetRIdResponse.datasource">
+    <None Include="Service References\ThreadPool\Client.ThreadPool.GetFullRequestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CombinedTP\Client.CombinedTP.ResultResponse.datasource">
+    <None Include="Service References\ThreadPool\Client.ThreadPool.GetProcTaskDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CombinedTP\Client.CombinedTP.StatusResponse.datasource">
+    <None Include="Service References\ThreadPool\Client.ThreadPool.GetRIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CombinedTP\CombinedTP.wsdl" />
-    <None Include="Service References\TP4\Client.TP4.GetRIdResponse.datasource">
+    <None Include="Service References\ThreadPool\Client.ThreadPool.Request.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TP4\Client.TP4.ResultResponse.datasource">
+    <None Include="Service References\ThreadPool\Client.ThreadPool.ResultResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TP4\Client.TP4.StatusResponse.datasource">
+    <None Include="Service References\ThreadPool\Client.ThreadPool.StatusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TP4\TP4.wsdl" />
+    <None Include="Service References\ThreadPool\ThreadPool.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -186,29 +183,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\CombinedTP\" />
-    <WCFMetadataStorage Include="Service References\TP4\" />
+    <WCFMetadataStorage Include="Service References\ThreadPool\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CombinedTP\configuration91.svcinfo" />
+    <None Include="Service References\ThreadPool\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CombinedTP\configuration.svcinfo" />
+    <None Include="Service References\ThreadPool\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CombinedTP\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TP4\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TP4\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TP4\Reference.svcmap">
+    <None Include="Service References\ThreadPool\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

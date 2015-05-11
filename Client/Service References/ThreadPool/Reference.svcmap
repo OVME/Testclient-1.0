@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9fdf1988-1559-4762-92e6-2a740c47c77b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b401ed28-2b78-4f1e-9662-ed52a399d19d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:57772/csp/samples/CombinedTP.CombinedService.CLS?WSDL=1" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:57772/csp/samples/ThreadPool.ThreadPoolService.CLS?WSDL=1" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CombinedTP.wsdl" MetadataType="Wsdl" ID="32e5c657-c1d6-44d3-a8a1-8c35930acc99" SourceId="1" SourceUrl="http://localhost:57772/csp/samples/CombinedTP.CombinedService.CLS?WSDL=1" />
+    <MetadataFile FileName="ThreadPool.wsdl" MetadataType="Wsdl" ID="86c119c6-260f-4b16-9cf7-ffe9aaefa32b" SourceId="1" SourceUrl="http://localhost:57772/csp/samples/ThreadPool.ThreadPoolService.CLS?WSDL=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

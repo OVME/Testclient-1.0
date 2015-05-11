@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace Client.Clients
+namespace Client.Model
 {
-    public class TP2WSClient
+    class RequestFull
     {
-        
     }
 }
